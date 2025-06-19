@@ -143,6 +143,28 @@ impl App {
             KeyCode::Esc => {
                 self.mode = Mode::Normal;
             }
+            KeyCode::Char('+') => {
+                self.image.zoom *= 1.1;
+            }
+            KeyCode::Char('-') => {
+                if self.image.zoom * 0.9 < 1.0 {
+                    self.display_message(("Can't zoom out anymore!").to_string());
+                } else {
+                    self.image.zoom *= 0.9;
+                }
+            }
+            KeyCode::Up => {
+                self.image.pan_y -= 10;
+            }
+            KeyCode::Down => {
+                self.image.pan_y += 10;
+            }
+            KeyCode::Left => {
+                self.image.pan_x -= 10;
+            }
+            KeyCode::Right => {
+                self.image.pan_x += 10;
+            }
 
             _ => {}
         }
