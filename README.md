@@ -1,6 +1,6 @@
 # Charcoal
 
-[Preview](swappy-20250619-221005.png)
+<img src="example1.png"/>
 
 My own image viewer for the terminal, written in rust using ratatui and other
 crates.
